@@ -1,3 +1,5 @@
+[![CI](https://github.com/LucasEsq/fractal-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/LucasEsq/fractal-lab/actions/workflows/ci.yml)
+
 # fractal-lab
 
 > Interactive fractal education for Jupyter notebooks.
