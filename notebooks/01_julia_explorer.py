@@ -11,12 +11,12 @@
 # ---
 
 # %% [markdown]
-# # Lesson 1 - What does `c` actually do in a Julia set?
+# # Lesson 1: What does `c` actually do in a Julia set?
 #
 # A Julia set looks chaotic. It isn't. Every pixel comes from the same
 # two operations, applied over and over: **square**, then **add c**.
 #
-# Change `c` and the picture changes - sometimes subtly, sometimes
+# Change `c` and the picture changes, sometimes subtly, sometimes
 # catastrophically. This notebook is about what that one number does,
 # and how it turns into the picture you're about to see.
 
@@ -30,7 +30,7 @@
 # Three things happen:
 #
 # 1. Square `z`.
-# 2. Add `c` - a constant **you** choose.
+# 2. Add `c`, a constant **you** choose.
 # 3. Repeat with the result.
 #
 # The **Julia set** for `c` is the set of starting `z` values whose
@@ -51,11 +51,11 @@ for n in range(1, 9):
     print(f"  n={n}   z = {z.real:+.4f} {z.imag:+.4f}i   |z| = {abs(z):.4f}")
 
 # %% [markdown]
-# `|z|` is growing. Fast. This `z` is **not** in the Julia set - left
+# `|z|` is growing fast. This `z` is **not** in the Julia set. Left
 # running, its orbit flies off to infinity.
 
 # %% [markdown]
-# ## The other fate - same `c`, different `z`
+# ## The other fate: same `c`, different `z`
 #
 # Same rule. Same `c`. Different starting point.
 
@@ -78,8 +78,8 @@ iterate(complex( 0.0, 0.0), c)   # the critical point
 # Two points, same rule, opposite outcomes:
 #
 # - `z = 0.5 + 0.5i` diverges. **Not** in the Julia set.
-# - `z = -0.5 + 0i` doesn't. **In** the Julia set.
-# - The orbit of `z = 0` is special - the **critical orbit** - and it
+# - `z = -0.5 + 0i` doesn't. It **is** in the Julia set.
+# - The orbit of `z = 0` is special. It is the **critical orbit**, and it
 #   determines the whole structure.
 #
 # So "is `z` in the Julia set?" is answered by running the iteration
@@ -97,7 +97,7 @@ iterate(complex( 0.0, 0.0), c)   # the critical point
 #
 # The recorded count is the pixel's value. Pixels that never escaped
 # get the maximum. Handing that grid of integers to `imshow` with a
-# colormap *is* the fractal image - there is no separate "draw the
+# colormap *is* the fractal image. There is no separate "draw the
 # fractal" step.
 
 # %% [markdown]
@@ -119,12 +119,12 @@ for z0 in [complex(0, 0), complex(0.5, 0.5), complex(-0.5, 0),
            complex(0.1, 0.1), complex(1.0, 1.0)]:
     n = escape_time(z0, c, max_iter=100)
     tag = "bounded" if n == 100 else f"escaped at n={n}"
-    print(f"  z0 = {z0.real:+.2f}{z0.imag:+.2f}i   -> {tag}")
+    print(f"  z0 = {z0.real:+.2f}{z0.imag:+.2f}i   {tag}")
 
 # %% [markdown]
 # ## The same thing, vectorized
 #
-# The scalar loop is clear but slow - one point at a time. The actual
+# The scalar loop is clear but slow, since it handles one point at a time. The actual
 # `fractal_lab.render.julia` does the same thing to a whole grid with
 # NumPy. Here's the compact version:
 
@@ -158,7 +158,7 @@ print("unique values:", np.unique(grid).size)
 # data of the image. Rendering is just coloring it in.
 
 # %% [markdown]
-# ## Rendering - the final step
+# ## Rendering: the final step
 #
 # `imshow` maps each integer in `grid` to a color through a colormap.
 # Low values (escaped fast) go to one end of the map. High values
@@ -170,14 +170,14 @@ from fractal_lab.palettes import JULIA_CMAP
 
 fig, ax = plt.subplots(figsize=(6, 6))
 ax.imshow(grid, cmap=JULIA_CMAP, extent=[-2, 2, -2, 2], origin="lower")
-ax.set_title("Julia set for c = -0.4 + 0.6i  (Siegel disk)")
+ax.set_title("Julia set for c = -0.4 + 0.6i (Siegel disk)")
 ax.axis("off")
 plt.show()
 
 # %% [markdown]
 # The whole pipeline, one line:
 #
-# > **iterate** -> **count escapes** -> **color by count** -> **picture**
+# > **iterate**, **count escapes**, **color by count**, **picture**
 #
 # Everything below is a variation on that theme.
 
@@ -194,10 +194,10 @@ lessons.julia_explorer()
 # %% [markdown]
 # ## Reading the widget
 #
-# - **Re(c)** and **Im(c)** - the real and imaginary parts of `c`.
-# - **Title** - announces whether the current `c` is **inside** or
-#   **outside** the Mandelbrot set. Inside -> connected Julia set.
-#   Outside -> "dust."
+# - **Re(c)** and **Im(c)**: the real and imaginary parts of `c`.
+# - **Title**: announces whether the current `c` is **inside** or
+#   **outside** the Mandelbrot set. Inside means a connected Julia set.
+#   Outside means "dust."
 
 # %% [markdown]
 # ## Named examples

@@ -31,9 +31,9 @@ interactive = ["ipywidgets>=8.0", "jupyter>=1.0"]
 dev = ["pytest>=7.0", "pytest-cov", "ipywidgets>=8.0"]
 
 [project.urls]
-Homepage = "https://github.com/YOURNAME/fractal-lab"
-Repository = "https://github.com/YOURNAME/fractal-lab"
-Issues = "https://github.com/YOURNAME/fractal-lab/issues"
+Homepage = "https://github.com/LucasEsq/fractal-lab"
+Repository = "https://github.com/LucasEsq/fractal-lab"
+Issues = "https://github.com/LucasEsq/fractal-lab/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/fractal_lab"]

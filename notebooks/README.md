@@ -1,11 +1,12 @@
 # Notebooks
 
-Interactive lessons. **Previews render directly on GitHub** — click any
+Interactive lessons. **Previews render directly on GitHub**. Click any
 `.ipynb` file to see the executed output without cloning anything.
 
 | # | Lesson | Preview | Run it |
 |---|--------|---------|--------|
-| 1 | What does `c` actually do? | [📓](01_julia_explorer.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/YOURNAME/fractal-lab/main?labpath=notebooks/01_julia_explorer.ipynb) |
+| 1 | What does `c` actually do? | [📓](01_julia_explorer.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/LucasEsq/fractal-lab/main?labpath=notebooks/01_julia_explorer.ipynb) |
+| 2 | Where does `c` live? | [📓](02_mandelbrot_map.ipynb) | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/LucasEsq/fractal-lab/main?labpath=notebooks/02_mandelbrot_map.ipynb) |
 
 ## Regenerating
 

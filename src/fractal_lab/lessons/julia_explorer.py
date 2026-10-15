@@ -1,4 +1,4 @@
-# Drag two sliders to morph the Julia set — see how c controls everything.
+# Drag two sliders to morph the Julia set and see how c controls everything.
 from __future__ import annotations
 
 import os
@@ -35,7 +35,7 @@ def julia_explorer(resolution=300, max_iter=80, force_static=False):
             inside = mandelbrot_contains(c, max_iter=200)
             status = "connected (c in M)" if inside else "dust (c not in M)"
             ax.set_title(
-                f"c = {real:+.4f} {imag:+.4f}i   -   {status}",
+                f"c = {real:+.4f} {imag:+.4f}i: {status}",
                 fontsize=11,
             )
 
